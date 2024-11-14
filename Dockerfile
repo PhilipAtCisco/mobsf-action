@@ -1,4 +1,4 @@
-FROM opensecurity/mobile-security-framework-mobsf:v4.1.3
+FROM opensecurity/mobile-security-framework-mobsf:latest
 
 LABEL version="1.7.2"
 LABEL repository="https://github.com/fundacaocerti/mobsf-action"
