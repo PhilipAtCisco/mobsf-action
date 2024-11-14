@@ -10,12 +10,12 @@ LABEL com.github.actions.description="Wraps the MobSF docker to enable common co
 LABEL com.github.actions.icon="package"
 LABEL com.github.actions.color="gray-dark"
 
-USER root
+USER github
 
-RUN sudo apt-get update -y && \
-    sudo apt-get install -y curl jq && \
-    sudo mkdir -p /github/home && \
-    sudo chown mobsf /github/home
+RUN sudo apt-get update -y 
+RUN sudo apt-get install -y curl jq
+RUN sudo mkdir -p /github/home 
+RUN sudo chown mobsf /github/home
 
 USER mobsf
 COPY LICENSE README.md /
