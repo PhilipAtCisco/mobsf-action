@@ -23,11 +23,11 @@ RUN apt-get install -y curl jq
 #RUN chmod 700 /github/home/.MobSF
 #RUN ls -ld /github/home/.MobSF
 
-ENV MOBSF_HOME_DIR=/home/mobsf/.MobSF
-
 USER mobsf
 COPY LICENSE README.md /
 COPY "entrypoint.sh" "/home/mobsf/Mobile-Security-Framework-MobSF/entrypoint_github.sh"
+
+#ENV MOBSF_HOME_DIR=/home/mobsf/.MobSF
 
 ENTRYPOINT ["/home/mobsf/Mobile-Security-Framework-MobSF/entrypoint_github.sh"]
 CMD ["--help"]
