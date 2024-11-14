@@ -15,8 +15,9 @@ USER root
 RUN apt-get update -y && \
   apt-get install -y curl jq
 
+RUN mkdir -p /github/home && chown mobsf /github/home
+
 USER mobsf
-ENV HOME=/home/mobsf/Mobile-Security-Framework-MobSF
 COPY LICENSE README.md /
 COPY "entrypoint.sh" "/home/mobsf/Mobile-Security-Framework-MobSF/entrypoint_github.sh"
 
