@@ -25,7 +25,7 @@ fi
 export MOBSF_API_KEY="$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 64)"
 export MOBSF_URL="localhost:8000"
 
-mkdir /home/mobsf/.MobSF
+#mkdir /home/mobsf/.MobSF
 export HOME=/home/mobsf/.MobSF
 #export MOBSF_HOME_DIR=/home/mobsf/Mobile-Security-Framework-MobSF
 
