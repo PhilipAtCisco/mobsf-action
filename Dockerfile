@@ -12,8 +12,8 @@ LABEL com.github.actions.color="gray-dark"
 
 
 RUN sudo apt-get update -y && \
-    sudo apt-get install -y curl jq \ &&
-    sudo mkdir -p /github/home \ &&
+    sudo apt-get install -y curl jq && \
+    sudo mkdir -p /github/home && \
     sudo chown mobsf /github/home
 
 USER mobsf
