@@ -36,7 +36,7 @@ echo starting gunicorn
 gunicorn -b 127.0.0.1:8000 "mobsf.MobSF.wsgi:application" --workers=1 --threads=10 --timeout=1800 &
 
 # Wait to start MobSF
-sleep 2
+sleep 20 #KLUDGE
 
 cd $GITHUB_WORKSPACE
 
