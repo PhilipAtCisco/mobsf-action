@@ -14,14 +14,16 @@ USER root
 
 RUN apt-get update -y 
 RUN apt-get install -y curl jq
-RUN mkdir -p /github/home/.MobSF
-RUN ls -ld /github
-RUN ls -ld /github/home
-RUN ls -ld /github/home/.MobSF
-RUN chown mobsf /github/home/.MobSF
-RUN ls -ld /github/home/.MobSF
-RUN chmod 700 /github/home/.MobSF
-RUN ls -ld /github/home/.MobSF
+#RUN mkdir -p /github/home/.MobSF
+#RUN ls -ld /github
+#RUN ls -ld /github/home
+#RUN ls -ld /github/home/.MobSF
+#RUN chown mobsf /github/home/.MobSF
+#RUN ls -ld /github/home/.MobSF
+#RUN chmod 700 /github/home/.MobSF
+#RUN ls -ld /github/home/.MobSF
+
+ENV MOBSF_HOME_DIR=/home/mobsf/.MobSF
 
 USER mobsf
 COPY LICENSE README.md /
