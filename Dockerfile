@@ -14,8 +14,8 @@ USER root
 
 RUN apt-get update -y 
 RUN apt-get install -y curl jq
-RUN mkdir -p /github/home 
-RUN chown mobsf /github/home
+RUN mkdir -p /github/home/.MobSF
+RUN chown mobsf /github/home/.MobSF
 
 USER mobsf
 COPY LICENSE README.md /
