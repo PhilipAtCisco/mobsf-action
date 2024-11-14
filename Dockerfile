@@ -11,17 +11,8 @@ LABEL com.github.actions.icon="package"
 LABEL com.github.actions.color="gray-dark"
 
 USER root
-
-RUN apt-get update -y 
-RUN apt-get install -y curl jq
-#RUN mkdir -p /github/home/.MobSF
-#RUN ls -ld /github
-#RUN ls -ld /github/home
-#RUN ls -ld /github/home/.MobSF
-#RUN chown mobsf /github/home/.MobSF
-#RUN ls -ld /github/home/.MobSF
-#RUN chmod 700 /github/home/.MobSF
-#RUN ls -ld /github/home/.MobSF
+RUN apt-get update -y && \
+  apt-get install -y curl jq
 
 USER mobsf
 COPY LICENSE README.md /
