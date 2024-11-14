@@ -24,16 +24,23 @@ fi
 
 export MOBSF_API_KEY="$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 64)"
 export MOBSF_URL="localhost:8000"
-export MOBSF_HOME_DIR=/home/mobsf/Mobile-Security-Framework-MobSF
+
+mkdir /home/mobsf/.MobSF
+export HOME=/home/mobsf/.MobSF
+#export MOBSF_HOME_DIR=/home/mobsf/Mobile-Security-Framework-MobSF
 
 cd /home/mobsf/Mobile-Security-Framework-MobSF
 python3 manage.py makemigrations 2&>> manage.out && \
 python3 manage.py makemigrations StaticAnalyzer 2&>> manage.out && \
 python3 manage.py migrate 2&>> manage.out
+
+echo manage.out:
+cat manage.out
+
 gunicorn -b 127.0.0.1:8000 "mobsf.MobSF.wsgi:application" --workers=1 --threads=10 --timeout=1800 &
 
 # Wait to start MobSF
-sleep 20 #KLUDGE
+sleep 2 #undo KLUDGE
 
 cd $GITHUB_WORKSPACE
 
