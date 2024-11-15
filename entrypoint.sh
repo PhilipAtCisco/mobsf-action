@@ -29,17 +29,17 @@ export HOME=/home/mobsf
 #export MOBSF_HOME_DIR=/home/mobsf/Mobile-Security-Framework-MobSF
 
 cd /home/mobsf/Mobile-Security-Framework-MobSF
-python3 manage.py makemigrations 2&>> manage.out && \
-python3 manage.py makemigrations StaticAnalyzer 2&>> manage.out && \
-python3 manage.py migrate 2&>> manage.out
-
-echo manage.out:
-cat manage.out
+#python3 manage.py makemigrations 2&>> manage.out && \
+#python3 manage.py makemigrations StaticAnalyzer 2&>> manage.out && \
+#python3 manage.py migrate 2&>> manage.out
+#
+#echo manage.out:
+#cat manage.out
 
 gunicorn -b 127.0.0.1:8000 "mobsf.MobSF.wsgi:application" --workers=1 --threads=10 --timeout=1800 &
 
 # Wait to start MobSF
-sleep 2 #undo KLUDGE
+sleep 20 #undo KLUDGE
 
 cd $GITHUB_WORKSPACE
 
